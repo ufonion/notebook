@@ -1,7 +1,9 @@
 {
   "plugins": [
     "edit-link",
-    "page-toc"
+    "page-toc",
+    "code",
+    "codeblock-filename"
   ],
   "pluginsConfig": {
     "edit-link": {
