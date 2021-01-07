@@ -21,6 +21,14 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -60,6 +68,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
+    
+    <link rel="next" href="curl" />
     
     
     <link rel="prev" href="tlsssl.html" />
@@ -147,6 +157,19 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="curl">
+            
+                <span>
+            
+                    
+                    cURL
+            
+                </a>
+            
+
             
         </li>
     
@@ -300,10 +323,14 @@ $ chmod -v 0444 ca.pem server-cert.pem cert.pem
 
             
                 
-                <a href="tlsssl.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: TLS/SSL">
+                <a href="tlsssl.html" class="navigation navigation-prev " aria-label="Previous page: TLS/SSL">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="curl" class="navigation navigation-next " aria-label="Next page: cURL">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -312,7 +339,7 @@ $ chmod -v 0444 ca.pem server-cert.pem cert.pem
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"How to self-sign TLS/SSL certificates using OpenSSL","level":"1.2.1.1","depth":3,"previous":{"title":"TLS/SSL","level":"1.2.1","depth":2,"path":"network/tlsssl.md","ref":"network/tlsssl.md","articles":[{"title":"How to self-sign TLS/SSL certificates using OpenSSL","level":"1.2.1.1","depth":3,"path":"network/how_to_self-sign_tlsssl_certificates_using_openssl.md","ref":"network/how_to_self-sign_tlsssl_certificates_using_openssl.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["edit-link","page-toc"],"pluginsConfig":{"edit-link":{"label":"Edit Me","base":"https://github.com/ufonion/notebook/edit/master/"},"page-toc":{"position":"top","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"network/how_to_self-sign_tlsssl_certificates_using_openssl.md","mtime":"2021-01-07T10:52:01.410Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-07T10:58:30.846Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"How to self-sign TLS/SSL certificates using OpenSSL","level":"1.2.1.1","depth":3,"next":{"title":"cURL","level":"1.2.2","depth":2,"path":"network/curl","ref":"network/curl","articles":[]},"previous":{"title":"TLS/SSL","level":"1.2.1","depth":2,"path":"network/tlsssl.md","ref":"network/tlsssl.md","articles":[{"title":"How to self-sign TLS/SSL certificates using OpenSSL","level":"1.2.1.1","depth":3,"path":"network/how_to_self-sign_tlsssl_certificates_using_openssl.md","ref":"network/how_to_self-sign_tlsssl_certificates_using_openssl.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["edit-link","page-toc","code","codeblock-filename"],"pluginsConfig":{"search":{},"page-toc":{"position":"top","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"codeblock-filename":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit Me","base":"https://github.com/ufonion/notebook/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"network/how_to_self-sign_tlsssl_certificates_using_openssl.md","mtime":"2021-01-07T11:02:33.700Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-07T11:12:29.307Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -331,6 +358,10 @@ $ chmod -v 0444 ca.pem server-cert.pem cert.pem
     
         
         <script src="../gitbook/gitbook-plugin-page-toc/page-toc.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
         
     
         
