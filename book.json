@@ -3,7 +3,11 @@
     "edit-link",
     "page-toc",
     "code",
-    "codeblock-filename"
+    "codeblock-filename",
+    "-lunr", "-search", "search-pro",
+    "chapter-fold",
+    "expandable-chapters",
+    "splitter"
   ],
   "pluginsConfig": {
     "edit-link": {
