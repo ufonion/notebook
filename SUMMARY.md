@@ -23,3 +23,12 @@
   * [Clean up legacy kernels](linux/debian-ubuntu/clean_up_legacy_kernels.md)
   * [Clean up packages](linux/debian-ubuntu/clean_up_packages.md)
 
+## Virtualization/Containerization
+
+* [Docker](virtualization/docker/README.md)
+  * [Protect the Docker daemon socket](virtualization/docker/protect_the_docker_daemon_socket.md)
+  * [Docker Compose examples](virtualization/docker/docker-compose/README.md)
+    * [Aria2](virtualization/docker/docker-compose/aria2.md)
+    * [MinIO Cluster](virtualization/docker/docker-compose/minio-cluster.md)
+    * [V2Ray](virtualization/docker/docker-compose/v2ray.md)
+    * [MySQL](virtualization/docker/docker-compose/mysql.md)
