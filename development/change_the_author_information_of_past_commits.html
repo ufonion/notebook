@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Network · GitBook</title>
+        <title>Change the author information of past commits · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="tlsssl.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="git.html" />
     
 
     </head>
@@ -114,9 +112,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../network/">
             
-                <a href="./">
+                <a href="../network/">
             
                     
                     Network
@@ -128,9 +126,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="tlsssl.html">
+        <li class="chapter " data-level="1.2.1" data-path="../network/tlsssl.html">
             
-                <a href="tlsssl.html">
+                <a href="../network/tlsssl.html">
             
                     
                     TLS/SSL
@@ -142,9 +140,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1.1" data-path="how_to_self-sign_tlsssl_certificates_using_openssl.html">
+        <li class="chapter " data-level="1.2.1.1" data-path="../network/how_to_self-sign_tlsssl_certificates_using_openssl.html">
             
-                <a href="how_to_self-sign_tlsssl_certificates_using_openssl.html">
+                <a href="../network/how_to_self-sign_tlsssl_certificates_using_openssl.html">
             
                     
                     How to self-sign TLS/SSL certificates using OpenSSL
@@ -160,9 +158,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="curl.html">
+        <li class="chapter " data-level="1.2.2" data-path="../network/curl.html">
             
-                <a href="curl.html">
+                <a href="../network/curl.html">
             
                     
                     cURL
@@ -178,9 +176,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../development/">
+        <li class="chapter " data-level="1.3" data-path="./">
             
-                <a href="../development/">
+                <a href="./">
             
                     
                     Development
@@ -192,9 +190,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../development/git.html">
+        <li class="chapter " data-level="1.3.1" data-path="git.html">
             
-                <a href="../development/git.html">
+                <a href="git.html">
             
                     
                     Git
@@ -206,9 +204,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1.1" data-path="../development/change_the_author_information_of_past_commits.html">
+        <li class="chapter active" data-level="1.3.1.1" data-path="change_the_author_information_of_past_commits.html">
             
-                <a href="../development/change_the_author_information_of_past_commits.html">
+                <a href="change_the_author_information_of_past_commits.html">
             
                     
                     Change the author information of past commits
@@ -259,7 +257,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Network</a>
+        <a href=".." >Change the author information of past commits</a>
     </h1>
 </div>
 
@@ -274,7 +272,52 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="network">Network</h1>
+                                <h1 id="change-the-author-information-of-past-commits">Change the author information of past commits</h1>
+<h2 id="using---amend-for-the-very-last-commit">Using <code>--amend</code> for the very last commit</h2>
+<pre><code class="lang-bash">$ git commit --amend --author=<span class="hljs-string">&quot;ufonion &lt;mayongcong@gmail.com&gt;&quot;</span>
+</code></pre>
+<h2 id="using-interactive-rebase">Using interactive rebase</h2>
+<ul>
+<li>Start interactive rebase</li>
+</ul>
+<pre><code class="lang-bash">$ git rebase -i -p 0ad14fa5
+</code></pre>
+<ul>
+<li>Mark with &quot;edit&quot; for each commits which are the change targets.</li>
+</ul>
+<pre><code class="lang-bash">pick d7893a8 Version: 0.2.0
+edit 21d5600 fix scripts<span class="hljs-string">&apos; mod
+pick 4d0ca9e almost done
+edit 3dd4753 0.4.0
+pick fa455a7 ver 0.4.1
+pick 6e1197f 0.5.0
+pick 2a86a8f 0.5.1
+pick d30b456 0.5.2
+</span></code></pre>
+<ul>
+<li>Change the author of the target commits one by one</li>
+</ul>
+<pre><code class="lang-bash">$ git commit --amend --author=<span class="hljs-string">&quot;ufonion &lt;mayongcong@gmail.com&gt;&quot;</span> --no-edit
+$ git rebase --continue
+</code></pre>
+<h2 id="using-git-filter-branch">Using git filter-branch</h2>
+<pre><code class="lang-bash">$ git filter-branch --env-filter <span class="hljs-string">&apos;
+WRONG_EMAIL=&quot;wrong_user@wrong_email_server.com&quot;
+NEW_NAME=&quot;ufonion&quot;
+NEW_EMAIL=&quot;mayongcong@gmail.com&quot;
+
+if [ &quot;$GIT_COMMITTER_EMAIL&quot; = &quot;$WRONG_EMAIL&quot; ]
+then
+    export GIT_COMMITTER_NAME=&quot;$NEW_NAME&quot;
+    export GIT_COMMITTER_EMAIL=&quot;$NEW_EMAIL&quot;
+fi
+if [ &quot;$GIT_AUTHOR_EMAIL&quot; = &quot;$WRONG_EMAIL&quot; ]
+then
+    export GIT_AUTHOR_NAME=&quot;$NEW_NAME&quot;
+    export GIT_AUTHOR_EMAIL=&quot;$NEW_EMAIL&quot;
+fi
+&apos;</span> --tag-name-filter cat -- --branches --tags
+</code></pre>
 
                                 
                                 </section>
@@ -302,14 +345,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="git.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Git">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="tlsssl.html" class="navigation navigation-next " aria-label="Next page: TLS/SSL">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -318,7 +357,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Network","level":"1.2","depth":1,"next":{"title":"TLS/SSL","level":"1.2.1","depth":2,"path":"network/tlsssl.md","ref":"network/tlsssl.md","articles":[{"title":"How to self-sign TLS/SSL certificates using OpenSSL","level":"1.2.1.1","depth":3,"path":"network/how_to_self-sign_tlsssl_certificates_using_openssl.md","ref":"network/how_to_self-sign_tlsssl_certificates_using_openssl.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["edit-link","page-toc","code","codeblock-filename"],"pluginsConfig":{"search":{},"page-toc":{"position":"top","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"codeblock-filename":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit Me","base":"https://github.com/ufonion/notebook/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"network/README.md","mtime":"2021-01-07T11:02:33.690Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-08T04:53:58.649Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Change the author information of past commits","level":"1.3.1.1","depth":3,"previous":{"title":"Git","level":"1.3.1","depth":2,"path":"development/git.md","ref":"development/git.md","articles":[{"title":"Change the author information of past commits","level":"1.3.1.1","depth":3,"path":"development/change_the_author_information_of_past_commits.md","ref":"development/change_the_author_information_of_past_commits.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["edit-link","page-toc","code","codeblock-filename"],"pluginsConfig":{"search":{},"page-toc":{"position":"top","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"codeblock-filename":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit Me","base":"https://github.com/ufonion/notebook/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"development/change_the_author_information_of_past_commits.md","mtime":"2021-01-08T04:49:05.622Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-08T04:53:58.649Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
