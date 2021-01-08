@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "gitbook install && gitbook build",
+    "preview": "gitbook serve",
     "publish": "npm run build && gulp publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,10 +16,6 @@
   "author": "ufonion",
   "license": "ISC",
   "dependencies": {
-    "gitbook-plugin-chapter-fold": "0.0.4",
-    "gitbook-plugin-expandable-chapters": "^0.2.0",
-    "gitbook-plugin-search-pro": "^2.0.2",
-    "gitbook-plugin-splitter": "0.0.8",
     "gulp": "^4.0.2",
     "gulp-gh-pages": "^0.5.4",
     "gulp-load-plugins": "^2.0.6"
