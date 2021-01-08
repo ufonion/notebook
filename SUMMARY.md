@@ -19,8 +19,7 @@
 
 ## Linux
 
-* [Linux](linux/README)
-  * [Debian/Ubuntu](linux/debianubuntu)
-    * [Clean up legacy kernels](linux/clear_up_legacy_kernels.md)
-    * [Clean up packages](linux/clean_up_packages.md)
+* [Debian/Ubuntu](linux/debianubuntu)
+  * [Clean up legacy kernels](linux/clear_up_legacy_kernels.md)
+  * [Clean up packages](linux/clean_up_packages.md)
 
