@@ -1,14 +1,16 @@
 {
   "name": "notebook",
   "version": "1.0.0",
-  "description": "",
+  "description": "My Online Notebook",
   "main": "index.js",
   "scripts": {
+    "build": "gitbook install && gitbook build",
+    "publish": "npm run build && gulp publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@github-personal:ufonion/notebook.git"
+    "url": "git@github.com:ufonion/notebook.git"
   },
   "author": "ufonion",
   "license": "ISC",
