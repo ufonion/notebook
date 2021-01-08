@@ -6,7 +6,9 @@
   "scripts": {
     "build": "gitbook install && gitbook build",
     "preview": "gitbook serve",
+    "prepublish": "git-set-ufonion.sh",
     "publish": "npm run build && gulp publish",
+    "postpublish": "git-set-ng.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,6 +18,14 @@
   "author": "ufonion",
   "license": "ISC",
   "dependencies": {
+    "gitbook-plugin-chapter-fold": "0.0.4",
+    "gitbook-plugin-code": "^0.1.0",
+    "gitbook-plugin-codeblock-filename": "0.0.9",
+    "gitbook-plugin-edit-link": "^2.0.2",
+    "gitbook-plugin-expandable-chapters": "^0.2.0",
+    "gitbook-plugin-page-toc": "^1.1.1",
+    "gitbook-plugin-search-pro": "^2.0.2",
+    "gitbook-plugin-splitter": "0.0.8",
     "gulp": "^4.0.2",
     "gulp-gh-pages": "^0.5.4",
     "gulp-load-plugins": "^2.0.6"
