@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Installation · GitBook</title>
+        <title>Docker · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -81,10 +81,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../../linux/debian-ubuntu/" />
+    <link rel="next" href="protect_the_docker_daemon_socket.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="../../linux/debian-ubuntu/clean_up_packages.html" />
     
 
     </head>
@@ -187,9 +187,9 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="../git/">
+        <li class="chapter " data-level="3.1" data-path="../../development/git/">
             
-                <a href="../git/">
+                <a href="../../development/git/">
             
                     
                     Git
@@ -201,9 +201,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.1.1" data-path="../git/change_the_author_information_of_past_commits.html">
+        <li class="chapter " data-level="3.1.1" data-path="../../development/git/change_the_author_information_of_past_commits.html">
             
-                <a href="../git/change_the_author_information_of_past_commits.html">
+                <a href="../../development/git/change_the_author_information_of_past_commits.html">
             
                     
                     Change the author information of past commits
@@ -219,9 +219,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="./">
+        <li class="chapter " data-level="3.2" data-path="../../development/wsl/">
             
-                <a href="./">
+                <a href="../../development/wsl/">
             
                     
                     Windows Subsystem for Linux
@@ -233,9 +233,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="3.2.1" data-path="installation.html">
+        <li class="chapter " data-level="3.2.1" data-path="../../development/wsl/installation.html">
             
-                <a href="installation.html">
+                <a href="../../development/wsl/installation.html">
             
                     
                     Installation
@@ -310,9 +310,9 @@
         
         
     
-        <li class="chapter " data-level="5.1" data-path="../../virtualization/docker/">
+        <li class="chapter active" data-level="5.1" data-path="./">
             
-                <a href="../../virtualization/docker/">
+                <a href="./">
             
                     
                     Docker
@@ -324,9 +324,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.1" data-path="../../virtualization/docker/protect_the_docker_daemon_socket.html">
+        <li class="chapter " data-level="5.1.1" data-path="protect_the_docker_daemon_socket.html">
             
-                <a href="../../virtualization/docker/protect_the_docker_daemon_socket.html">
+                <a href="protect_the_docker_daemon_socket.html">
             
                     
                     Protect the Docker daemon socket
@@ -337,9 +337,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.2" data-path="../../virtualization/docker/docker-compose/">
+        <li class="chapter " data-level="5.1.2" data-path="docker-compose/">
             
-                <a href="../../virtualization/docker/docker-compose/">
+                <a href="docker-compose/">
             
                     
                     Docker Compose examples
@@ -351,9 +351,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1.2.1" data-path="../../virtualization/docker/docker-compose/aria2.html">
+        <li class="chapter " data-level="5.1.2.1" data-path="docker-compose/aria2.html">
             
-                <a href="../../virtualization/docker/docker-compose/aria2.html">
+                <a href="docker-compose/aria2.html">
             
                     
                     Aria2
@@ -364,9 +364,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.2.2" data-path="../../virtualization/docker/docker-compose/minio-cluster.html">
+        <li class="chapter " data-level="5.1.2.2" data-path="docker-compose/minio-cluster.html">
             
-                <a href="../../virtualization/docker/docker-compose/minio-cluster.html">
+                <a href="docker-compose/minio-cluster.html">
             
                     
                     MinIO Cluster
@@ -377,9 +377,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.2.3" data-path="../../virtualization/docker/docker-compose/v2ray.html">
+        <li class="chapter " data-level="5.1.2.3" data-path="docker-compose/v2ray.html">
             
-                <a href="../../virtualization/docker/docker-compose/v2ray.html">
+                <a href="docker-compose/v2ray.html">
             
                     
                     V2Ray
@@ -390,9 +390,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.2.4" data-path="../../virtualization/docker/docker-compose/mysql.html">
+        <li class="chapter " data-level="5.1.2.4" data-path="docker-compose/mysql.html">
             
-                <a href="../../virtualization/docker/docker-compose/mysql.html">
+                <a href="docker-compose/mysql.html">
             
                     
                     MySQL
@@ -443,7 +443,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Installation</a>
+        <a href="../.." >Docker</a>
     </h1>
 </div>
 
@@ -458,30 +458,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="installation">Installation</h1>
-<h1 id="enable-windows-subsystem-for-linux">Enable Windows Subsystem for Linux</h1>
-<p>Open <code>PowerShell</code> as Administrator and run:</p>
-<pre><code class="lang-bash">PS C:\Users\User&gt; dism.exe /online /<span class="hljs-built_in">enable</span>-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-</code></pre>
-<h2 id="check-requirements-for-running-wsl-2">Check requirements for running WSL 2</h2>
-<p>For x64 systems: <strong>Version 1903</strong> or higher, with <strong>Build 18362</strong> or higher. If not, please use <strong>Windows Update</strong> or download and run<a href="https://go.microsoft.com/fwlink/?LinkID=799445" target="_blank"> <strong>Windows Update Assistant</strong> </a>.</p>
-<h2 id="enable-virtual-machine-feature">Enable Virtual Machine feature</h2>
-<p>Open <code>PowerShell</code> as Administrator and run:</p>
-<pre><code class="lang-bash">PS C:\Users\User&gt; dism.exe /online /<span class="hljs-built_in">enable</span>-feature /featurename:VirtualMachinePlatform /all /norestart
-</code></pre>
-<h2 id="download-the-linux-kernel-update-package">Download the Linux kernel update package</h2>
-<p>Download and install <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi" target="_blank">WSL2 Linux kernel update package for x64 machines</a></p>
-<h2 id="set-wsl-2-as-your-default-version">Set WSL 2 as your default version</h2>
-<pre><code class="lang-bash">PS C:\Users\User&gt; wsl --set-default-version 2
-</code></pre>
-<h2 id="install-ubuntu-1804-lts">Install Ubuntu 18.04 LTS</h2>
-<p>Install it from <a href="https://www.microsoft.com/zh-cn/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1&amp;activetab=pivot:overviewtab" target="_blank"><strong>Windows Store</strong></a></p>
-<h2 id="install-docker-service">Install Docker Service</h2>
-<p>Follow the instructions <a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">here </a>and install docker service in WSL. After installation, as <code>systemd</code> is not enabled in WSL, please start the docker by running as below.</p>
-<pre><code class="lang-bash">$ sudo service docker start
-</code></pre>
-<h2 id="install-docker-desktop-for-windows">Install Docker Desktop for Windows</h2>
-<p>Follow the instructions <a href="https://docs.docker.com/docker-for-windows/install/" target="_blank">here</a>. Please pay attention about the Windows system type (Pro/Enterprise/Home, etc.). The Windows 10 Home is quite different from others.</p>
+                                <h1 id="docker">Docker</h1>
 
                                 
                                 </section>
@@ -509,12 +486,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Windows Subsystem for Linux">
+                <a href="../../linux/debian-ubuntu/clean_up_packages.html" class="navigation navigation-prev " aria-label="Previous page: Clean up packages">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../../linux/debian-ubuntu/" class="navigation navigation-next " aria-label="Next page: Debian/Ubuntu">
+                <a href="protect_the_docker_daemon_socket.html" class="navigation navigation-next " aria-label="Next page: Protect the Docker daemon socket">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -525,7 +502,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Installation","level":"3.2.1","depth":2,"next":{"title":"Debian/Ubuntu","level":"4.1","depth":1,"path":"linux/debian-ubuntu/README.md","ref":"linux/debian-ubuntu/README.md","articles":[{"title":"Clean up legacy kernels","level":"4.1.1","depth":2,"path":"linux/debian-ubuntu/clean_up_legacy_kernels.md","ref":"linux/debian-ubuntu/clean_up_legacy_kernels.md","articles":[]},{"title":"Clean up packages","level":"4.1.2","depth":2,"path":"linux/debian-ubuntu/clean_up_packages.md","ref":"linux/debian-ubuntu/clean_up_packages.md","articles":[]}]},"previous":{"title":"Windows Subsystem for Linux","level":"3.2","depth":1,"path":"development/wsl/README.md","ref":"development/wsl/README.md","articles":[{"title":"Installation","level":"3.2.1","depth":2,"path":"development/wsl/installation.md","ref":"development/wsl/installation.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["edit-link","page-toc","code","codeblock-filename","-lunr","-search","search-pro","chapter-fold","expandable-chapters","splitter"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"page-toc":{"position":"top","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"codeblock-filename":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit Me","base":"https://github.com/ufonion/notebook/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"development/wsl/installation.md","mtime":"2021-01-08T05:59:15.326Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-08T06:32:03.944Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Docker","level":"5.1","depth":1,"next":{"title":"Protect the Docker daemon socket","level":"5.1.1","depth":2,"path":"virtualization/docker/protect_the_docker_daemon_socket.md","ref":"virtualization/docker/protect_the_docker_daemon_socket.md","articles":[]},"previous":{"title":"Clean up packages","level":"4.1.2","depth":2,"path":"linux/debian-ubuntu/clean_up_packages.md","ref":"linux/debian-ubuntu/clean_up_packages.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["edit-link","page-toc","code","codeblock-filename","-lunr","-search","search-pro","chapter-fold","expandable-chapters","splitter"],"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"page-toc":{"position":"top","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4","showByDefault":true},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"codeblock-filename":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit Me","base":"https://github.com/ufonion/notebook/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"virtualization/docker/README.md","mtime":"2021-01-08T06:16:16.242Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-08T06:32:03.944Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
