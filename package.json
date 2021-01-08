@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "gitbook install && gitbook build",
+    "preview": "gitbook serve",
     "publish": "npm run build && gulp publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
