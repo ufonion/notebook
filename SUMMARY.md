@@ -22,6 +22,7 @@
 * [Debian/Ubuntu](linux/debian-ubuntu/README.md)
   * [Clean up legacy kernels](linux/debian-ubuntu/clean_up_legacy_kernels.md)
   * [Clean up packages](linux/debian-ubuntu/clean_up_packages.md)
+  * [Configuration](linux/debian-ubuntu/config_files.md)
 
 ## Virtualization/Containerization
 
