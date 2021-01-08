@@ -32,3 +32,4 @@
     * [MinIO Cluster](virtualization/docker/docker-compose/minio-cluster.md)
     * [V2Ray](virtualization/docker/docker-compose/v2ray.md)
     * [MySQL](virtualization/docker/docker-compose/mysql.md)
+    * [Clash](virtualization/docker/docker-compose/clash.md)
