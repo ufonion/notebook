@@ -8,15 +8,18 @@ jobs:
   publish:
     runs-on: ubuntu-18.04
     steps:
-      - name: Checkout Code
+      - name: Checkout Code 🛎️
         uses: actions/checkout@v2
-      - name: Setup Node.js v10
-        uses: actions/setup-node@v2
         with:
-          node-version: 10
-      - name: Setup Git Env
+          persist-credentials: false
+      - name: Install and build 🔧 
         run: |
-          git config --global user.email "mayongcong@gmail.com" \
-          && git config --global user.name "ufonion"
-      - name: Run publish script
-        run: yarn install && yarn run publish
+          yarn install
+          yarn build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: _book # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
