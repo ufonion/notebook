@@ -14,5 +14,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 10
+      - name: Setup Git Env
+        run: |
+          git config --global user.email "mayongcong@gmail.com" \
+          && git config --global user.name "ufonion"
       - name: Run publish script
         run: yarn install && yarn run publish
