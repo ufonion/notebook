@@ -17,6 +17,7 @@
   * [Change the author information of past commits](development/git/change_the_author_information_of_past_commits.md)
 * [Windows Subsystem for Linux](development/wsl/README.md)
   * [Installation](development/wsl/installation.md)
+  * [Limit the resouces occupation](development/wsl/limit-resources-occupation.md)
 
 ## Linux
 

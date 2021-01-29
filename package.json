@@ -6,9 +6,7 @@
   "scripts": {
     "build": "gitbook install && gitbook build",
     "preview": "gitbook serve",
-    "prepublish": "git-set-ufonion.sh",
     "publish": "npm run build && gulp publish",
-    "postpublish": "git-set-ng.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
