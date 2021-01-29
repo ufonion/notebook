@@ -9,7 +9,7 @@
 * [cURL](network/curl/README.md)
 * [TLS/SSL](network/tls-ssl/README.md)
   * [How to self-sign TLS/SSL certificates using OpenSSL](network/tls-ssl/how_to_self-sign_tlsssl_certificates_using_openssl.md)
-* [Ncat](network/ncat/READ.md)
+* [Ncat](network/ncat/README.md)
 
 ## Development
 
