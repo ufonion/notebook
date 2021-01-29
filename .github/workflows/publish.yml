@@ -15,4 +15,4 @@ jobs:
         with:
           node-version: 10
       - name: Run publish script
-        run: yarn install && yarn publish
+        run: yarn install && yarn run publish
